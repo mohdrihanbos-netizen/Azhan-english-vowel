@@ -1,0 +1,54 @@
+:root{--bg1:#2a1068;--bg2:#6a2fc0;--bg3:#ff5fa2;--card:rgba(255,255,255,.16);--tx:#fff;--bd:rgba(255,255,255,.35)}
+body.light{--bg1:#7fd6ff;--bg2:#b79bff;--bg3:#ffc2e2;--card:rgba(255,255,255,.62);--tx:#2a1a5e;--bd:#fff}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{font-family:"Baloo 2","Chalkboard SE","Comic Sans MS","Trebuchet MS",system-ui,sans-serif;color:var(--tx);background:linear-gradient(160deg,var(--bg1),var(--bg2) 55%,var(--bg3)) fixed;font-size:clamp(18px,2.3vw,26px);overflow-x:hidden}
+.sky{position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(2px 2px at 12% 20%,#fff,transparent),radial-gradient(3px 3px at 80% 15%,#ffe066,transparent),radial-gradient(2px 2px at 45% 70%,#fff,transparent),radial-gradient(3px 3px at 90% 80%,#fff,transparent),radial-gradient(2px 2px at 25% 88%,#ffe066,transparent),radial-gradient(2px 2px at 62% 38%,#fff,transparent);animation:tw 3s ease-in-out infinite alternate}
+.sky::before,.sky::after{content:"";position:absolute;border-radius:50%;animation:float 7s ease-in-out infinite alternate}
+.sky::before{width:90px;height:90px;right:6%;top:30%;background:radial-gradient(circle at 30% 30%,#ffd0a0,#ff7a59 70%);opacity:.7}
+.sky::after{width:60px;height:60px;left:4%;top:55%;background:radial-gradient(circle at 30% 30%,#c8f7ff,#4fa8ff 70%);opacity:.7;animation-delay:-3s}
+#app{max-width:1100px;margin:0 auto;padding:14px;position:relative;animation:fade .4s}
+h2{margin:.3em 0;text-align:center}
+.card{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:2px solid var(--bd);border-radius:28px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:16px;margin:12px 0}
+.ctr{text-align:center}
+.btn{font:inherit;font-weight:800;color:#2a1a5e;background:linear-gradient(#fff6a8,#ffc83d);border:0;border-radius:999px;padding:.55em 1.2em;min-height:58px;min-width:58px;cursor:pointer;box-shadow:0 6px 0 #d68d00,0 10px 20px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px) scale(1.03)}.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #d68d00}
+.b2{background:linear-gradient(#c4f7ff,#4fd1ff);box-shadow:0 6px 0 #1e8fbf,0 10px 20px rgba(0,0,0,.25)}
+.b3{background:linear-gradient(#ffd0ea,#ff6fb5);box-shadow:0 6px 0 #c23a80,0 10px 20px rgba(0,0,0,.25)}
+.b4{background:linear-gradient(#d6ffc4,#6fe07a);box-shadow:0 6px 0 #2f9b3b,0 10px 20px rgba(0,0,0,.25)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}.btn[aria-pressed=true]{outline:4px solid #fff}
+:focus-visible{outline:5px solid #fff;outline-offset:3px;box-shadow:0 0 0 10px #ff2d85!important}
+.big{font-size:1.9em}.play{font-size:2em;padding:.4em 1.6em;animation:bounce 1s infinite}
+.logo{font-size:clamp(40px,9vw,90px);font-weight:900;text-align:center;margin:.1em 0;background:linear-gradient(90deg,#ffe066,#ff7ab8,#7be3ff,#ffe066);background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite;filter:drop-shadow(0 4px 0 rgba(0,0,0,.3))}
+.row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin:10px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:12px 0}
+.grid .btn{width:100%}
+.mas{width:110px;height:110px;animation:bounce 2s infinite;flex:none}
+.say{max-width:520px;animation:pop 1.2s;margin:0}
+.em{font-size:clamp(90px,18vw,160px);line-height:1;display:block;text-align:center}
+.pic{display:flex;justify-content:center}.pic svg{width:clamp(110px,22vw,190px);height:auto}
+.opt.pic svg,.opt .em{width:clamp(70px,14vw,120px);font-size:clamp(60px,11vw,100px)}
+.letter{font-size:clamp(110px,22vw,210px);font-weight:900;line-height:1;text-align:center;text-shadow:0 8px 0 rgba(0,0,0,.25);animation:pop 1.8s infinite}
+.word{font-size:clamp(46px,10vw,90px);font-weight:900;text-align:center}
+.good{background:linear-gradient(#d6ffc4,#37d36a)!important;animation:pop .5s}.wob{animation:wob .5s}
+.slot{display:inline-block;min-width:1.1em;border-bottom:6px dashed #ffe066;text-align:center}.slot.ok{color:#7dff9b;border-bottom-style:solid}
+.tile{touch-action:none;user-select:none;font-size:1.6em;min-width:90px}.tile.drag{position:relative;z-index:9;transition:none}
+.bubs{position:relative;height:300px;overflow:hidden}
+.bub{position:absolute;width:92px;height:92px;border-radius:50%;font:inherit;font-size:2.2em;font-weight:900;color:#fff;border:3px solid #fff;cursor:pointer;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.8),rgba(120,220,255,.45));animation:float 3s ease-in-out infinite alternate;text-shadow:0 2px 4px rgba(0,0,0,.5)}
+.pbar{height:16px;border-radius:9px;background:rgba(0,0,0,.25);overflow:hidden;margin:8px 0}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,#ffe066,#ff7ab8);transition:width .4s}
+.tbar i{width:100%;animation:shrink 10s linear forwards;background:linear-gradient(90deg,#6fe07a,#ffe066)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.lock{filter:grayscale(1);opacity:.6}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;text-align:center}
+.shelf div{padding:10px;border-radius:20px;background:rgba(255,255,255,.12)}.shelf span{font-size:2.2em;display:block}.shelf small{font-size:.65em}
+table{width:100%;border-collapse:collapse}td{padding:.4em;border-bottom:1px solid var(--bd)}
+input[type=range]{width:min(320px,70vw);height:40px}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#000b;color:#fff;padding:.5em 1em;border-radius:20px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:99;max-width:90vw;text-align:center}#toast.on{opacity:1}
+.conf{position:fixed;top:-20px;width:12px;height:18px;z-index:99;pointer-events:none;animation:fall 2.5s linear forwards}
+@keyframes tw{to{opacity:.55}}@keyframes float{to{transform:translateY(-18px) rotate(4deg)}}@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+@keyframes bounce{50%{transform:translateY(-12px)}}@keyframes pop{50%{transform:scale(1.08)}}@keyframes flow{to{background-position:300% 0}}
+@keyframes wob{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}@keyframes shrink{to{width:0}}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg)}}
+body.rm *,body.rm *::before,body.rm *::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:600px){.mas{width:80px;height:80px}.btn{min-height:52px}}
